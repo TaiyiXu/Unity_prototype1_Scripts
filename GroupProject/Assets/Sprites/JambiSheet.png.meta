@@ -223,7 +223,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -232,6 +232,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -282,11 +284,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 734
-        width: 249
-        height: 290
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 768
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -303,11 +305,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 734
-        width: 243
-        height: 290
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 768
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,61 +325,19 @@ TextureImporter:
       name: JambiSheet_2
       rect:
         serializedVersion: 2
-        x: 509
-        y: 772
-        width: 313
-        height: 245
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 58, w: 0}
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 09ab2fab0668d84f0800000000000000
       internalID: -824855406727480688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JambiSheet_4
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 782
-        width: 21
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 24}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5437c70db086b2b0800000000000000
-      internalID: -5569122339829369764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JambiSheet_7
-      rect:
-        serializedVersion: 2
-        x: 670
-        y: 823
-        width: 2
-        height: 1
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 025df96b41466ae60800000000000000
-      internalID: 7973170230432093472
       vertices: []
       indices: 
       edges: []
