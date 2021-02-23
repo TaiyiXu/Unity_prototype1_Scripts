@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: b842d908310025f42a5000086d6fd344
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8357743652229098784
+    second: JambiSheet_0
+  - first:
+      213: 8595663479141425735
+    second: JambiSheet_1
+  - first:
+      213: -824855406727480688
+    second: JambiSheet_2
+  - first:
+      213: -4891066528653638872
+    second: JambiSheet_3
+  - first:
+      213: -5569122339829369764
+    second: JambiSheet_4
+  - first:
+      213: -4734256227678310330
+    second: JambiSheet_5
+  - first:
+      213: 2827613151017727381
+    second: JambiSheet_6
+  - first:
+      213: 7973170230432093472
+    second: JambiSheet_7
+  - first:
+      213: 2278990496654081955
+    second: JambiSheet_8
+  - first:
+      213: -5926329881344118402
+    second: JambiSheet_9
+  - first:
+      213: 5568476939962292687
+    second: JambiSheet_10
+  - first:
+      213: 2256109974182258263
+    second: JambiSheet_11
+  - first:
+      213: 782906408683550569
+    second: JambiSheet_12
+  - first:
+      213: -8342160317195182861
+    second: JambiSheet_13
+  - first:
+      213: -2629883589812439842
+    second: JambiSheet_14
+  - first:
+      213: -5978248525202992651
+    second: JambiSheet_15
+  - first:
+      213: 7901464606904550793
+    second: JambiSheet_16
+  - first:
+      213: 6374178414883239821
+    second: JambiSheet_17
+  - first:
+      213: 4730342348281480540
+    second: JambiSheet_18
+  - first:
+      213: 5115770429073740882
+    second: JambiSheet_19
+  - first:
+      213: 3385198562523824999
+    second: JambiSheet_20
+  - first:
+      213: -5315646930394609350
+    second: JambiSheet_21
+  - first:
+      213: 7213364501878572521
+    second: JambiSheet_22
+  - first:
+      213: -6221275346562941405
+    second: JambiSheet_23
+  - first:
+      213: -1934508762066609145
+    second: JambiSheet_24
+  - first:
+      213: 1254926877325427214
+    second: JambiSheet_25
+  - first:
+      213: 6942700829930739275
+    second: JambiSheet_26
+  - first:
+      213: 572057121456370313
+    second: JambiSheet_27
+  - first:
+      213: -8340673466186333771
+    second: JambiSheet_28
+  - first:
+      213: 4754714296827490024
+    second: JambiSheet_29
+  - first:
+      213: 4733255987467524664
+    second: JambiSheet_30
+  - first:
+      213: -4349694752927471634
+    second: JambiSheet_31
+  - first:
+      213: 7705180742806877587
+    second: JambiSheet_32
+  - first:
+      213: 7538281068122952730
+    second: JambiSheet_33
+  - first:
+      213: -2658696236212984149
+    second: JambiSheet_34
+  - first:
+      213: 8401526104016594019
+    second: JambiSheet_35
+  - first:
+      213: -6674695506512202732
+    second: JambiSheet_36
+  - first:
+      213: -5391300702138523346
+    second: JambiSheet_37
+  - first:
+      213: 9083045056965845610
+    second: JambiSheet_38
+  - first:
+      213: 1650913479243655649
+    second: JambiSheet_39
+  - first:
+      213: 1324478126337189052
+    second: JambiSheet_40
+  - first:
+      213: 677903039904297647
+    second: JambiSheet_41
+  - first:
+      213: -6940983932885362921
+    second: JambiSheet_42
+  - first:
+      213: -8617216275783638633
+    second: JambiSheet_43
+  - first:
+      213: 2542568246733220930
+    second: JambiSheet_44
+  - first:
+      213: -1628121580030306970
+    second: JambiSheet_45
+  - first:
+      213: 4034794434824516936
+    second: JambiSheet_46
+  - first:
+      213: -5173675715729383639
+    second: JambiSheet_47
+  - first:
+      213: 1009738188336311284
+    second: JambiSheet_48
+  - first:
+      213: -3576235584256487415
+    second: JambiSheet_49
+  - first:
+      213: 874486531160237305
+    second: JambiSheet_50
+  - first:
+      213: 4135878724242768028
+    second: JambiSheet_51
+  - first:
+      213: -1554942723744843038
+    second: JambiSheet_52
+  - first:
+      213: 5816668561829661500
+    second: JambiSheet_53
+  - first:
+      213: 4088350936334714548
+    second: JambiSheet_54
+  - first:
+      213: 1963562844346600138
+    second: JambiSheet_55
+  - first:
+      213: -84692659090720771
+    second: JambiSheet_56
+  - first:
+      213: 1165668050851448009
+    second: JambiSheet_57
+  - first:
+      213: 2351879170489418801
+    second: JambiSheet_58
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JambiSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 734
+        width: 249
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2db15fd64530c80800000000000000
+      internalID: -8357743652229098784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JambiSheet_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 734
+        width: 243
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742e50b746ee94770800000000000000
+      internalID: 8595663479141425735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JambiSheet_2
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 772
+        width: 313
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 58, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ab2fab0668d84f0800000000000000
+      internalID: -824855406727480688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JambiSheet_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 782
+        width: 21
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 24}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5437c70db086b2b0800000000000000
+      internalID: -5569122339829369764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JambiSheet_7
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 823
+        width: 2
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025df96b41466ae60800000000000000
+      internalID: 7973170230432093472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
