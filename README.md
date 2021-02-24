@@ -7,6 +7,7 @@
 - Player will not overlap with other objects
 - Fading when overlapping with other objects（WIP)
 - Player can recover HP
+- HP display
 - Player can take damages
 - Game camera will follow the player
 - NPC interaction（WIP)
