@@ -1,11 +1,14 @@
 # Unity_prototype1_Scripts
+
+## Load Assets/Basecamp.scene
+
 ## 2/23/2021
-- 玩家可以移动
-- 玩家不会与其他物品重叠
-- 重叠时自动淡化（WIP)
-- 玩家可以回复生命值
-- 玩家可以受到伤害
-- 摄像头可以跟踪
-- NPC对话（WIP)
+- Player can move
+- Player will not overlap with other objects
+- Fading when overlapping with other objects（WIP)
+- Player can recover HP
+- Player can take damages
+- Game camera will follow the player
+- NPC interaction（WIP)
 - you tell me
 
