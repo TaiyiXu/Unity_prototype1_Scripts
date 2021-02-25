@@ -15,5 +15,6 @@
 
 
 # Download
+> Mainland China Mirror Powered By [FastGit](https://doc.fastgit.org/en-us/)
 - For mainland china: [Download ZIP](https://download.fastgit.org/TaiyiXu/Unity_prototype1_Scripts/archive/main.zip)
 - For the rest of the world: [Download ZIP](https://github.com/TaiyiXu/Unity_prototype1_Scripts/archive/main.zip)
