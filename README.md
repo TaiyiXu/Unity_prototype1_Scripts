@@ -5,7 +5,7 @@
 ## 2/23/2021
 - Player can move
 - Player will not overlap with other objects
-- Fading when overlapping with other objects（WIP)
+- Fading when overlapping with other objects (Not Includding NPCs)
 - Player can recover HP
 - HP display
 - Player can take damages

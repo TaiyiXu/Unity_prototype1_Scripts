@@ -9,7 +9,7 @@ public class DamageZone : MonoBehaviour
     {
         PlayerController controller = collision.GetComponent<PlayerController>();
 
-        if (controller.tag == "Player")
+        if (controller != null)
         {
             controller.ChangeHealth(-1);
         }

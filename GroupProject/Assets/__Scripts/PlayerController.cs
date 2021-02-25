@@ -5,15 +5,19 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public TextMeshProUGUI healthText;
-
-    public float speed = 3.0f;
-
-    public int maxHealth = 5;
-    public float timeInvincible = 2.0f;
     public int health { get { return currentHealth; } }
     int currentHealth;
+    public int maxHealth = 5;
+    public TextMeshProUGUI healthText;
 
+    public Camera cam;
+
+    public float speed;
+    public float normalSpeed = 3.0f;
+    public float runSpeed = 6.0f;
+
+
+    public float timeInvincible = 2.0f;
     bool isInvincible;
     float invincibleTimer;
 
@@ -23,7 +27,7 @@ public class PlayerController : MonoBehaviour
     float horizontal;
     float vertical;
 
-    Vector2 lookDirection = new Vector2(1, 0);
+    Vector2 lookDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,10 +49,27 @@ public class PlayerController : MonoBehaviour
                 isInvincible = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             Launch();
         }
+
+        //Player Sprint
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = runSpeed;
+        }
+        else
+        {
+            speed = normalSpeed;
+        }
+
+        //Get mouse position, transfer it to look direction
+        Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        lookDirection = worldMousePos - transform.position;
+        lookDirection.Normalize();
+        //Debug.Log(lookDirection);
+
     }
     private void FixedUpdate()
     {
@@ -75,6 +96,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log(currentHealth + "/" + maxHealth);
     }
 
+    //Launch projectile
     void Launch()
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
@@ -82,6 +104,18 @@ public class PlayerController : MonoBehaviour
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.Launch(lookDirection, 300);
 
+    }
+
+    KeyCode getKeyCode()
+    {
+        foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKey(kcode))
+            {
+                return kcode;
+            }
+        }
+        return KeyCode.None;
     }
 
     void SetHealthText()
