@@ -64,6 +64,20 @@ public class PlayerController : MonoBehaviour
             speed = normalSpeed;
         }
 
+        //Player Conversention with NPC trigger
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+            if (hit.collider != null)
+            {
+                NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
+                if (character != null)
+                {
+                    character.DisplayDialog();
+                }
+            }
+        }
+
         //Get mouse position, transfer it to look direction
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         lookDirection = worldMousePos - transform.position;
