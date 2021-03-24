@@ -22,7 +22,7 @@ public class FadingSprite : MonoBehaviour
     {
         alpha = Mathf.SmoothDamp(alpha, targetAlpha, ref velocity, 0.1f, 1f);
         spriteRenderer.color = new Color(1, 1, 1, alpha);
-        Debug.Log(spriteRenderer.color);
+        //Debug.Log(spriteRenderer.color);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
