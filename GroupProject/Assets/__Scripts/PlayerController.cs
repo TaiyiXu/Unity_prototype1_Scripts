@@ -49,6 +49,9 @@ public class PlayerController : MonoBehaviour
                 isInvincible = false;
         }
 
+        if (currentHealth <= 0)
+            Destroy(gameObject);
+
         if (Input.GetMouseButtonDown(0))
         {
             Launch();

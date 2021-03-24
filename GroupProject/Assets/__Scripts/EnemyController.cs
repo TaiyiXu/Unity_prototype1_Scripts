@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+
+    public int Health=3;
+ 
+
     public float speed = 3.0f;
     public bool vertical;
     public float changeTime = 3.0f;
@@ -28,6 +32,14 @@ public class EnemyController : MonoBehaviour
             direction = -direction;
             timer = changeTime;
         }
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+
+
     }
 
     void FixedUpdate()
@@ -46,14 +58,24 @@ public class EnemyController : MonoBehaviour
         rigidbody2D.MovePosition(position);
     }
 
-    private void OnCollisionEnter2D(Collision other)
+    private void OnCollisionEnter2D (Collision2D other)
     {
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        Projectile bullet = other.gameObject.GetComponent<Projectile>();
 
         if (player != null)
         {
             player.ChangeHealth(-1);
+
         }
+
+        if (bullet != null)
+        {
+            Destroy(bullet.gameObject);
+            Health -= 1;
+
+        }
+
 
     }
 }

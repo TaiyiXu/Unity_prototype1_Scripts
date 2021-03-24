@@ -42,9 +42,12 @@ public class NonPlayerCharacter : MonoBehaviour
             direction = -direction;
             timer = changeTime;
         }
+
+
+
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         Vector2 position = rigidbody2D.position;
 
@@ -63,4 +66,5 @@ public class NonPlayerCharacter : MonoBehaviour
         timerDisplay = displayTime;
         dialogBox.SetActive(true);
     }
+
 }
