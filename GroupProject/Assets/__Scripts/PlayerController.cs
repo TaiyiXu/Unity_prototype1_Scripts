@@ -6,39 +6,44 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public int health { get { return currentHealth; } }
-    int currentHealth;
+    protected int currentHealth;
     public int maxHealth = 5;
-    public TextMeshProUGUI healthText;
-
-    public Camera cam;
-
+    protected TextMeshProUGUI healthText;
+    public Canvas canvas;
+    protected Canvas canvasObj;
+    protected Animator animator;
     public float speed;
     public float normalSpeed = 3.0f;
     public float runSpeed = 6.0f;
 
 
     public float timeInvincible = 2.0f;
-    bool isInvincible;
-    float invincibleTimer;
+    protected bool isInvincible;
+    protected float invincibleTimer;
 
     public GameObject projectilePrefab;
 
-    Rigidbody2D rigidbody2d;
-    float horizontal;
-    float vertical;
+    protected Rigidbody2D rigidbody2d;
+    protected float horizontal;
+    protected float vertical;
 
-    Vector2 lookDirection;
+    protected Vector2 lookDirection;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
+        canvasObj=Instantiate(canvas);
+        healthText = canvasObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
         rigidbody2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         SetHealthText();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
+        
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
@@ -55,6 +60,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Launch();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q)|| Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(this.gameObject);
+            Destroy(this.canvasObj.gameObject);
         }
 
         //Player Sprint
@@ -88,10 +99,12 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(lookDirection);
 
     }
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         Vector2 position = rigidbody2d.position;
         position.x = position.x + speed * horizontal * Time.deltaTime;
+        animator.SetFloat("Move X", lookDirection.x);
+        //Debug.Log(lookDirection.x);
         position.y = position.y + speed * vertical * Time.deltaTime;
 
         rigidbody2d.MovePosition(position);
@@ -114,7 +127,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Launch projectile
-    void Launch()
+    protected void Launch()
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
 
@@ -123,20 +136,32 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    KeyCode getKeyCode()
-    {
-        foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode)))
-        {
-            if (Input.GetKey(kcode))
-            {
-                return kcode;
-            }
-        }
-        return KeyCode.None;
-    }
-
     void SetHealthText()
     {
         healthText.text = "HP: " + health.ToString();
+    }
+
+    void newPlayer()
+    {
+
+    }
+    void Flip()
+    {
+
+        bool playerHasXAxisSpeed = Mathf.Abs(rigidbody2d.velocity.x) > Mathf.Epsilon;
+        if (playerHasXAxisSpeed)
+        {
+            if (rigidbody2d.velocity.x > 0.1f)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);//right no flip
+            }
+
+            if (rigidbody2d.velocity.x < -0.1f)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+        }
+
+
     }
 }

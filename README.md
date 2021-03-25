@@ -2,6 +2,12 @@
 
 ## Load Assets/_Scenes/Basecamp.scene
 
+## 3/22/2021
+- Press Q and E switch player
+- Melee and long range shot possible
+- NPC Movement
+- NPC Interaction
+
 ## 2/23/2021
 - Player can move
 - Player will not overlap with other objects

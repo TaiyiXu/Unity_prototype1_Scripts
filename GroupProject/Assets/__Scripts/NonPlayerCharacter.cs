@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NonPlayerCharacter : MonoBehaviour
 {
+    public int Health = 2;
+
     public float displayTime = 4.0f;
     public GameObject dialogBox;
     float timerDisplay;
@@ -12,12 +14,15 @@ public class NonPlayerCharacter : MonoBehaviour
     public bool vertical;
     public float changeTime = 3.0f;
 
+    Animator animator;
     Rigidbody2D rigidbody2D;
     float timer;
     int direction = 1;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         dialogBox.SetActive(false);
         timerDisplay = -1.0f;
 
@@ -45,6 +50,11 @@ public class NonPlayerCharacter : MonoBehaviour
 
 
 
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     void FixedUpdate()
@@ -54,12 +64,37 @@ public class NonPlayerCharacter : MonoBehaviour
         if (vertical)
         {
             position.y = position.y + Time.deltaTime * speed * direction;
+            animator.SetFloat("Move X", 0);
+            animator.SetFloat("Move Y", direction);
         }
         else
         {
             position.x = position.x + Time.deltaTime * speed * direction;
+            animator.SetFloat("Move X", direction);
+            animator.SetFloat("Move Y", 0);
         }
         rigidbody2D.MovePosition(position);
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        Projectile bullet = other.gameObject.GetComponent<Projectile>();
+        Player2Controller player2 = other.gameObject.GetComponent<Player2Controller>();
+
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+
+        }
+
+        if (bullet != null)
+        {
+            Destroy(bullet.gameObject);
+            Health -= 1;
+
+        }
+
+
     }
     public void DisplayDialog()
     {
