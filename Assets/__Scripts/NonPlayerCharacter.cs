@@ -77,22 +77,7 @@ public class NonPlayerCharacter : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        Projectile bullet = other.gameObject.GetComponent<Projectile>();
-        Player2Controller player2 = other.gameObject.GetComponent<Player2Controller>();
-
-        if (player != null)
-        {
-            player.ChangeHealth(-1);
-
-        }
-
-        if (bullet != null)
-        {
-            Destroy(bullet.gameObject);
-            Health -= 1;
-
-        }
+        
 
 
     }

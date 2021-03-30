@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Player2Controller : PlayerController
+public class Bandit : Player, IDamagable
 {
 
     EdgeCollider2D edgeCollider;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        healthText = canvasObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        //Get Sword Collider and disable it
         edgeCollider = GetComponent<EdgeCollider2D>();
         edgeCollider.enabled = !edgeCollider.enabled;
     }
@@ -19,13 +21,7 @@ public class Player2Controller : PlayerController
     // Update is called once per frame
     protected override void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-
-        //Get mouse position, transfer it to look direction
-        Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        lookDirection = worldMousePos - transform.position;
-        lookDirection.Normalize();
+        base.Update();
 
         if (lookDirection.x > 0)
             transform.localScale = new Vector3(-1.5f, this.transform.localScale.y, this.transform.localScale.z);
@@ -35,20 +31,6 @@ public class Player2Controller : PlayerController
         { animator.SetInteger("AnimState", 2); }
         else
         { animator.SetInteger("AnimState", 0); }
-
-
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E))
-        {
-            Destroy(this.gameObject);
-            Destroy(this.canvasObj.gameObject);
-        }
-
-        if (isInvincible)
-        {
-            invincibleTimer -= Time.deltaTime;
-            if (invincibleTimer < 0)
-                isInvincible = false;
-        }
 
         if (currentHealth <= 0)
         {
@@ -60,16 +42,12 @@ public class Player2Controller : PlayerController
         {
             animator.SetTrigger("Attack");
             edgeCollider.enabled = !edgeCollider.enabled;
+            edgeCollider.enabled = !edgeCollider.enabled;
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             Launch();
-        }
-
-        if (Input.GetKeyDown("space"))
-        {
-
         }
 
     }
@@ -83,12 +61,22 @@ public class Player2Controller : PlayerController
     }
     protected override void FixedUpdate()
     {
-        Vector2 position = rigidbody2d.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical * Time.deltaTime;
-
-        rigidbody2d.MovePosition(position);
+        base.FixedUpdate();
     }
 
+    public void Damage(int damageAmount)
+    {
+        if (damageAmount < 0)
+        {
+            if (isInvincible)
+                return;
 
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+        }
+
+        currentHealth = Mathf.Clamp(currentHealth + damageAmount, 0, maxHealth);
+        SetHealthText();
+        Debug.Log(currentHealth + "/" + maxHealth);
+    }
 }

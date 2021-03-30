@@ -7,11 +7,11 @@ public class DamageZone : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerController controller = collision.GetComponent<PlayerController>();
+        IDamagable obj = collision.gameObject.GetComponent<IDamagable>();
 
-        if (controller != null)
+        if (obj != null)
         {
-            controller.ChangeHealth(-1);
+            obj.Damage(-1);
         }
     }
 }

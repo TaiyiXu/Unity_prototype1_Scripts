@@ -64,27 +64,22 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        Projectile bullet = other.gameObject.GetComponent<Projectile>();
-        Player2Controller player2 = other.gameObject.GetComponent<Player2Controller>();
+        IDamagable obj = other.gameObject.GetComponent<IDamagable>();
+        //Projectile bullet = other.gameObject.GetComponent<Projectile>();
 
-        if (player != null)
-        {
-            player.ChangeHealth(-1);
-
-        }
-
-
-        if (bullet != null)
-        {
-            Destroy(bullet.gameObject);
-            Health -= 1;
-
-        }
-
-        if(player2 != null)
+        if (other != null)
         {
             Health -= 1;
+            obj.Damage(-1);
+
         }
+
+
+        //if (bullet != null)
+        //{
+        //    Destroy(bullet.gameObject);
+        //    Health -= 1;
+        //
+        //}
     }
 }

@@ -12,17 +12,21 @@ public class CamController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         cam = GetComponent<CinemachineVirtualCamera>();
         currentPlayer = Instantiate(players[0], this.gameObject.transform.position, Quaternion.identity);
         cam.Follow = currentPlayer.transform;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        cam.Follow = currentPlayer.transform;
+        if (currentPlayer != null)
+        {
+            cam.Follow = currentPlayer.transform;
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             currentPlayer = Instantiate(players[1], this.gameObject.transform.position, Quaternion.identity);
@@ -33,5 +37,5 @@ public class CamController : MonoBehaviour
         }
     }
 
-    
+
 }
