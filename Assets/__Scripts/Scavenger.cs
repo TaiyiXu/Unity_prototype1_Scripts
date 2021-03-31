@@ -57,6 +57,7 @@ public class Scavenger : Player, IDamagable
     {
         if (damageAmount < 0)
         {
+            animator.SetTrigger("Got Hurt");
             StartCoroutine(Flash(flashSpeed));
             if (isInvincible)
                 return;

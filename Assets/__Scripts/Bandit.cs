@@ -7,11 +7,14 @@ public class Bandit : Player, IDamagable
 {
 
     EdgeCollider2D edgeCollider;
+    bool isDead;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+
+        isDead = false;
 
         //Get Sword Collider and disable it
         edgeCollider = GetComponent<EdgeCollider2D>();
@@ -22,11 +25,13 @@ public class Bandit : Player, IDamagable
     protected override void Update()
     {
         base.Update();
-
-        if (lookDirection.x > 0)
-            transform.localScale = new Vector3(-1.5f, this.transform.localScale.y, this.transform.localScale.z);
-        else if (lookDirection.x < 0)
-            transform.localScale = new Vector3(1.5f, this.transform.localScale.y, this.transform.localScale.z);
+        if (!isDead)
+        {
+            if (lookDirection.x > 0)
+                transform.localScale = new Vector3(-1.5f, this.transform.localScale.y, this.transform.localScale.z);
+            else if (lookDirection.x < 0)
+                transform.localScale = new Vector3(1.5f, this.transform.localScale.y, this.transform.localScale.z);
+        }
         if (Mathf.Abs(horizontal) > Mathf.Epsilon)
         { animator.SetInteger("AnimState", 2); }
         else
@@ -35,6 +40,7 @@ public class Bandit : Player, IDamagable
         if (currentHealth <= 0)
         {
             animator.SetTrigger("Death");
+            isDead = true;
             //Destroy(gameObject);
         }
 
@@ -70,7 +76,8 @@ public class Bandit : Player, IDamagable
         {
             if (isInvincible)
                 return;
-
+            animator.SetTrigger("Hurt");
+            StartCoroutine(Flash(flashSpeed));
             isInvincible = true;
             invincibleTimer = timeInvincible;
         }
