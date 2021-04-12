@@ -1,5 +1,10 @@
 # Unity_prototype1_Scripts
 
+## 4/12/2021
+- New quest system implemented
+- New assets added
+- Quest list Ui displayed at the right bottom corner
+
 ## Load Assets/_Scenes/Basecamp.scene
 
 ## 3/22/2021
