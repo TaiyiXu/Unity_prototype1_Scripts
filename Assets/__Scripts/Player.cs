@@ -70,6 +70,8 @@ public abstract class Player : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spRenderer = GetComponent<SpriteRenderer>();
+
+        DontDestroyOnLoad(gameObject.transform);
     }
 
     protected void SetHealthText()

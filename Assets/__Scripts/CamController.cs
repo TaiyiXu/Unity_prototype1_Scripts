@@ -17,6 +17,8 @@ public class CamController : MonoBehaviour
         currentPlayer = Instantiate(players[0], this.gameObject.transform.position, Quaternion.identity);
         cam.Follow = currentPlayer.transform;
 
+
+        DontDestroyOnLoad(gameObject.transform);
     }
 
     // Update is called once per frame
