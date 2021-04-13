@@ -173,6 +173,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7283414299266054544, guid: 6600e1f9ecb0fbf4ba2366837bb6fc6b,
     type: 3}
   flashSpeed: 0.1
+  blood: {fileID: 888178467128489840, guid: 382b3550622d5464aabde0e7ecfb7c02, type: 3}
 --- !u!70 &7202212335832562353
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

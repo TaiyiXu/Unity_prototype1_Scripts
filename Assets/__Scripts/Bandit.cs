@@ -6,6 +6,8 @@ using TMPro;
 public class Bandit : Player, IDamagable
 {
 
+    public GameObject blood;
+
     EdgeCollider2D edgeCollider;
     bool isDead;
 
@@ -40,6 +42,7 @@ public class Bandit : Player, IDamagable
         if (currentHealth <= 0)
         {
             animator.SetTrigger("Death");
+            Instantiate(blood, transform.position, Quaternion.identity);
             isDead = true;
             //Destroy(gameObject);
         }
@@ -47,6 +50,7 @@ public class Bandit : Player, IDamagable
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("Attack");
+            Instantiate(blood, transform.position, Quaternion.identity);
             edgeCollider.enabled = !edgeCollider.enabled;
             edgeCollider.enabled = !edgeCollider.enabled;
         }

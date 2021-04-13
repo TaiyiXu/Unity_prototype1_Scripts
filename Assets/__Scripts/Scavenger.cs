@@ -5,6 +5,8 @@ using TMPro;
 
 public class Scavenger : Player, IDamagable
 {
+    public GameObject blood;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -58,6 +60,7 @@ public class Scavenger : Player, IDamagable
         if (damageAmount < 0)
         {
             animator.SetTrigger("Got Hurt");
+            Instantiate(blood, transform.position, Quaternion.identity);
             StartCoroutine(Flash(flashSpeed));
             if (isInvincible)
                 return;
