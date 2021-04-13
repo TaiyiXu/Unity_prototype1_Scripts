@@ -6,7 +6,7 @@ public class HealthCollectible : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player p = collision.GetComponent<Player>();
+        APlayer p = collision.GetComponent<APlayer>();
 
         if (p.tag == "Player" && p.Health < p.maxHealth)
         {
