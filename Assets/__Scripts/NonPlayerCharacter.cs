@@ -15,7 +15,7 @@ public class NonPlayerCharacter : MonoBehaviour
     public float changeTime = 3.0f;
 
     Animator animator;
-    Rigidbody2D rigidbody2D;
+    Rigidbody2D rbody2D;
     float timer;
     int direction = 1;
 
@@ -26,7 +26,7 @@ public class NonPlayerCharacter : MonoBehaviour
         dialogBox.SetActive(false);
         timerDisplay = -1.0f;
 
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
     }
 
@@ -59,7 +59,7 @@ public class NonPlayerCharacter : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 position = rigidbody2D.position;
+        Vector2 position = rbody2D.position;
 
         if (vertical)
         {
@@ -73,7 +73,7 @@ public class NonPlayerCharacter : MonoBehaviour
             animator.SetFloat("Move X", direction);
             animator.SetFloat("Move Y", 0);
         }
-        rigidbody2D.MovePosition(position);
+        rbody2D.MovePosition(position);
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
