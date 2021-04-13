@@ -15,18 +15,20 @@ public class QuestEvent
     public string id;//unique identifier of the quest
     public int order = -1; // d emonstrate the order of the current Quest
     public EventStatus status;//keep track of the statu of the quest whether it is WAITING, CURRENT or DONE
-    public QuestButton button; 
+    public QuestButton button;
+    public GameObject location;
 
     public List<QuestPath> pathlist = new List<QuestPath>();  
     //the list keep track of what quest is coming next.
     //if the previous quest is DONE, tell player what is the next WAITING quest
     
-    public QuestEvent(string n , string d)
+    public QuestEvent(string n , string d, GameObject l)
     {
         id = Guid.NewGuid().ToString();// this code will generate a unique sequence of identity for the id of the quest(000111-1000-1113..)
         name = n;
         description = d;
         status = EventStatus.WAITING;
+        location = l;
     }
 
     public void UpdateQuestEvent(EventStatus es)

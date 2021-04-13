@@ -9,9 +9,9 @@ public class Quest //it has the information of all previous and future quests.
 
     public Quest() { }
 
-    public QuestEvent AddQuestEvent(string n, string d)
+    public QuestEvent AddQuestEvent(string n, string d,GameObject l)
     {
-        QuestEvent questEvent = new QuestEvent(n, d);
+        QuestEvent questEvent = new QuestEvent(n, d,l);
         questEvents.Add(questEvent);
         return questEvent;
     }//this method will first create a quest event with the given name,decriptio and id.
