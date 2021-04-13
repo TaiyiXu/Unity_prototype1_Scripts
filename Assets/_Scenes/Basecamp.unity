@@ -184,6 +184,71 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 5}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1001 &193760023
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1182338901}
+    m_Modifications:
+    - target: {fileID: 110520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_Name
+      value: Food (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 110520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.14525083
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543729985, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
 --- !u!1 &259498365
 GameObject:
   m_ObjectHideFlags: 3
@@ -6785,9 +6850,36 @@ Transform:
   m_Children:
   - {fileID: 1496051780}
   - {fileID: 1543729987}
+  - {fileID: 1219369608}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1219369607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 110520, guid: ad25a4e752915438e9f55a35bedacf1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 193760023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1219369608 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 410520, guid: ad25a4e752915438e9f55a35bedacf1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 193760023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1219369609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219369607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f376bb3b44869458bb0ffa3ea7f7a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  qManager: {fileID: 0}
+  qButton: {fileID: 0}
 --- !u!1 &1249077769
 GameObject:
   m_ObjectHideFlags: 0
@@ -6901,7 +6993,8 @@ MonoBehaviour:
   questPrintBox: {fileID: 110643242}
   buttonPrefab: {fileID: 5102342081449779287, guid: 4bce15b18fc25554286ce63408d3d8de,
     type: 3}
-  foodA: {fileID: 1401175843}
+  quest1: {fileID: 1401175843}
+  quest2: {fileID: 1219369607}
 --- !u!4 &1251911681
 Transform:
   m_ObjectHideFlags: 0
@@ -7352,6 +7445,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1496051778, guid: 46e8bf4bf645a47e3ae1b60c7e18418c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e8bf4bf645a47e3ae1b60c7e18418c, type: 3}
 --- !u!4 &1496051780 stripped
@@ -7417,7 +7514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1543729985, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad25a4e752915438e9f55a35bedacf1f, type: 3}

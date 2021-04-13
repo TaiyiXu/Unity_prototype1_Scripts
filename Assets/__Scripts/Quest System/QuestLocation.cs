@@ -8,7 +8,7 @@ public class QuestLocation : MonoBehaviour
     public QuestEvent qEvent;
     public QuestButton qButton;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag != "Player") return;// if the quest object does not hit player, return
 
