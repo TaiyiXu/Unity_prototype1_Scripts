@@ -9,6 +9,8 @@ public class CamController : MonoBehaviour
     public GameObject[] players;
     GameObject currentPlayer;
 
+    CinemachineConfiner aCameraConfiner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class CamController : MonoBehaviour
         currentPlayer = Instantiate(players[0], this.gameObject.transform.position, Quaternion.identity);
         cam.Follow = currentPlayer.transform;
 
+        aCameraConfiner = GameObject.FindGameObjectWithTag("CameraConfig").GetComponent<CinemachineConfiner>();
 
         DontDestroyOnLoad(gameObject.transform);
     }
@@ -36,6 +39,13 @@ public class CamController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             currentPlayer = Instantiate(players[0], this.gameObject.transform.position, Quaternion.identity);
+        }
+
+        if (aCameraConfiner.m_BoundingShape2D == null)
+        {
+            //Update Camera Confiner
+            aCameraConfiner.InvalidatePathCache();
+            aCameraConfiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Confiner").GetComponent<Collider2D>();
         }
     }
 

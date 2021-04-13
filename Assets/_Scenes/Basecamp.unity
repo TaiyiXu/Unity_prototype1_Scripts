@@ -2019,8 +2019,8 @@ GameObject:
   - component: {fileID: 413172514}
   - component: {fileID: 413172513}
   m_Layer: 3
-  m_Name: CameraConfiner
-  m_TagString: Untagged
+  m_Name: BasecampConfiner
+  m_TagString: Confiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2464,7 +2464,7 @@ GameObject:
   - component: {fileID: 844098720}
   m_Layer: 0
   m_Name: CM vcam1
-  m_TagString: Untagged
+  m_TagString: CameraConfig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
