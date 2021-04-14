@@ -13,8 +13,9 @@ public abstract class Player : MonoBehaviour
         get => currentHealth;
         set
         {
-            if (currentHealth < maxHealth)
+            if (currentHealth <= maxHealth)
             {
+                Debug.Log("yes" + currentHealth);
                 currentHealth += value;
             }
         }
@@ -25,7 +26,7 @@ public abstract class Player : MonoBehaviour
     public int exp;
 
     // Player Level
-    public int level=1;
+    public int level = 1;
     //*****************************************
 
 
@@ -41,7 +42,7 @@ public abstract class Player : MonoBehaviour
     //Attack
     public int attack;
     //*****************************************
-    
+
     //Speed
     protected float speed;
     public float normalSpeed;
@@ -103,7 +104,7 @@ public abstract class Player : MonoBehaviour
 
     public void gainExp()
     {
-        exp ++;
+        exp++;
         Debug.Log("gained 1 exp");
     }
     //*****************************************
@@ -182,6 +183,7 @@ public abstract class Player : MonoBehaviour
         position.y = position.y + speed * vertical * Time.deltaTime;
         rigidbody2d.MovePosition(position);
     }
+
 
     protected IEnumerator Flash(float x)
     {
