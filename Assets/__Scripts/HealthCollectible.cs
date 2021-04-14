@@ -10,7 +10,8 @@ public class HealthCollectible : MonoBehaviour
 
         if (p.tag == "Player" && p.Health < p.maxHealth)
         {
-            p.Health = 1;
+            IDamagable p1 = collision.GetComponent<IDamagable>();
+            p1.Damage(1);
             Destroy(gameObject);
         }
 

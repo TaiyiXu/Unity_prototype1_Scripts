@@ -14,15 +14,15 @@ public class EnemyZombie2 : EnemyController
     private Transform playerTranform;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        //base.Start();
+        base.Start();
         playerTranform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         //check the position of enmey and player 
         if (playerTranform != null)

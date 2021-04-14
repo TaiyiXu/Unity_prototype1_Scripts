@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -36,7 +36,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         timer -= Time.deltaTime;
 
