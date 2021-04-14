@@ -18,17 +18,17 @@ public class Scavenger : Player, IDamagable
     {
         base.Update();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && StaminaBar.instance.getCurrentStamina()!=0)
         {
             Launch();
-            StaminaBar.instance.useStamina(10);
+            StaminaBar.instance.useStamina(1000);
         }
 
         //Player Sprint
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && StaminaBar.instance.getCurrentStamina() != 0)
         {
+            StaminaBar.instance.useStamina(10);
             speed = boostSpeed;
-
         }
         else
         {
