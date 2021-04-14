@@ -14,6 +14,7 @@ TagManager:
   - DamageZone
   - CameraConfig
   - StartPoint
+  - Teleport
   layers:
   - Default
   - TransparentFX

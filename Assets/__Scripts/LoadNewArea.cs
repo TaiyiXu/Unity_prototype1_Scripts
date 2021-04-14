@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class LoadNewArea : MonoBehaviour
 {
     public string sceneName;
+
+    public static LoadNewArea instance;
+
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         Player obj = collision.gameObject.GetComponent<Player>();
@@ -13,5 +17,10 @@ public class LoadNewArea : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
+    }
+
+    public void setLevel2()
+    {
+        sceneName = "Level2";
     }
 }

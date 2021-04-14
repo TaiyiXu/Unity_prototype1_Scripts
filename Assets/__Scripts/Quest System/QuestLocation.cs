@@ -7,6 +7,7 @@ public class QuestLocation : MonoBehaviour
     public QuestManager qManager;
     public QuestEvent qEvent;
     public QuestButton qButton;
+    public Player player;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,6 +18,8 @@ public class QuestLocation : MonoBehaviour
         qEvent.UpdateQuestEvent(QuestEvent.EventStatus.DONE);
         qButton.UpdateButton(QuestEvent.EventStatus.DONE);
         qManager.UpdateQuestOnCompletion(qEvent);
+    
+
     }
 
     public void Setup(QuestManager qm, QuestEvent qe, QuestButton qb)
