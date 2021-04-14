@@ -13,15 +13,17 @@ public class EnemyZombie : EnemyController
 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         waitTime = startWaitTime;
         movPos.position = GetRandomPos();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         transform.position = Vector2.MoveTowards(transform.position, movPos.position, speed * Time.deltaTime);
 
         //compare the distance  between before and after
