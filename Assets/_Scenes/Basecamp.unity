@@ -2453,7 +2453,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1299039043}
   m_HandleRect: {fileID: 1299039042}
   m_Direction: 2
-  m_Value: 0.9999762
+  m_Value: 0.9999765
   m_Size: 0.6147273
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7195,7 +7195,7 @@ GameObject:
   - component: {fileID: 1251911680}
   m_Layer: 0
   m_Name: QuestManager
-  m_TagString: Untagged
+  m_TagString: QuestManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7217,7 +7217,6 @@ MonoBehaviour:
     type: 3}
   quest1: {fileID: 1401175843}
   quest2: {fileID: 1219369607}
-  quest3: {fileID: 0}
 --- !u!4 &1251911681
 Transform:
   m_ObjectHideFlags: 0

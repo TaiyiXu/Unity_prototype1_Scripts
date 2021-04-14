@@ -73,7 +73,8 @@ public class QuestManager : MonoBehaviour
 
         if (e == final)
         {
-            //end game scene
+            LoadNewArea scene = GameObject.FindGameObjectWithTag("Teleport").GetComponent<LoadNewArea>();
+            scene.sceneName = "Ending";
         }
 
         foreach (QuestEvent n in quest.questEvents)
