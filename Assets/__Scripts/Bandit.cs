@@ -47,17 +47,21 @@ public class Bandit : Player, IDamagable
             //Destroy(gameObject);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&& StaminaBar.instance.getCurrentStamina()!=0)
         {
             animator.SetTrigger("Attack");
             Instantiate(blood, transform.position, Quaternion.identity);
             edgeCollider.enabled = !edgeCollider.enabled;
             edgeCollider.enabled = !edgeCollider.enabled;
+            StaminaBar.instance.useStamina(1000);
+
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             Launch();
+
+
         }
 
     }
