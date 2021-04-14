@@ -13,6 +13,7 @@ TagManager:
   - Weapon
   - DamageZone
   - CameraConfig
+  - StartPoint
   layers:
   - Default
   - TransparentFX

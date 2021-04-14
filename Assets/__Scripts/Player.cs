@@ -71,6 +71,9 @@ public abstract class Player : MonoBehaviour
     protected SpriteRenderer spRenderer;
     public float flashSpeed;
 
+    public static bool isPlayerPresent;
+    public static bool isCanvasPresent;
+
     protected virtual void Start()
     {
         //Init HP Text Display
@@ -87,6 +90,26 @@ public abstract class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         spRenderer = GetComponent<SpriteRenderer>();
 
+        if (!isPlayerPresent)
+        {
+            isPlayerPresent = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        if (!isCanvasPresent)
+        {
+            isCanvasPresent = true;
+        }
+        else
+        {
+            Destroy(canvasObj.gameObject);
+        }
+
+
+        DontDestroyOnLoad(canvasObj);
         DontDestroyOnLoad(gameObject.transform);
     }
 
@@ -147,7 +170,9 @@ public abstract class Player : MonoBehaviour
         //Clean player model and HP Text
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E))
         {
+            isPlayerPresent = false;
             Destroy(this.gameObject);
+            isCanvasPresent = false;
             Destroy(this.canvasObj.gameObject);
         }
 

@@ -11,15 +11,30 @@ public class CamController : MonoBehaviour
 
     CinemachineConfiner aCameraConfiner;
 
+    public static bool isCamConfigPresent;
+    private void Awake()
+    {
+        currentPlayer = Instantiate(players[0], this.gameObject.transform.position, Quaternion.identity);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
 
         cam = GetComponent<CinemachineVirtualCamera>();
-        currentPlayer = Instantiate(players[0], this.gameObject.transform.position, Quaternion.identity);
+
         cam.Follow = currentPlayer.transform;
 
         aCameraConfiner = GameObject.FindGameObjectWithTag("CameraConfig").GetComponent<CinemachineConfiner>();
+
+        if (!isCamConfigPresent)
+        {
+            isCamConfigPresent = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         DontDestroyOnLoad(gameObject.transform);
     }
