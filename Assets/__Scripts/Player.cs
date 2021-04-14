@@ -20,6 +20,15 @@ public abstract class Player : MonoBehaviour
         }
     }
 
+    //*****************************************
+    //Experience
+    public int exp;
+
+    // Player Level
+    public int level=1;
+    //*****************************************
+
+
     //Health Text
     protected TextMeshProUGUI healthText;
     public Canvas canvas;
@@ -28,10 +37,16 @@ public abstract class Player : MonoBehaviour
     //Animator
     protected Animator animator;
 
+    //*****************************************
+    //Attack
+    public int attack;
+    //*****************************************
+    
     //Speed
     protected float speed;
     public float normalSpeed;
     public float boostSpeed;
+
 
     //Invincible 
     public float timeInvincible;
@@ -79,6 +94,43 @@ public abstract class Player : MonoBehaviour
 
         healthText.text = "HP: " + Health.ToString();
     }
+
+    //*****************************************
+    protected int PlayerCurrentLevel()
+    {
+        return level;
+    }
+
+    public void gainExp()
+    {
+        exp ++;
+        Debug.Log("gained 1 exp");
+    }
+    //*****************************************
+
+    //*****************************************
+    public void levelUp()
+    {
+        if (exp % 3 == 0)
+        {
+
+            level++;
+            speed++;
+            //stamina++;
+            attack++;
+        }
+
+        Debug.Log("Level Up");
+    }
+    //*****************************************
+
+    //*****************************************
+    public int getAttack()
+    {
+        return attack;
+    }
+    //*****************************************
+
 
     protected virtual void Update()
     {

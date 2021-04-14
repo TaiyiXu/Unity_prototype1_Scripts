@@ -21,17 +21,20 @@ public class Scavenger : Player, IDamagable
         if (Input.GetMouseButtonDown(0))
         {
             Launch();
+            StaminaBar.instance.useStamina(10);
         }
 
         //Player Sprint
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = boostSpeed;
+
         }
         else
         {
             speed = normalSpeed;
         }
+
 
         //Gameover
         if (currentHealth <= 0)
@@ -44,6 +47,7 @@ public class Scavenger : Player, IDamagable
     {
         base.FixedUpdate();
         animator.SetFloat("Move X", lookDirection.x);
+
     }
 
     //Launch projectile

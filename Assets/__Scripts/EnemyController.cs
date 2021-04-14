@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
     float timer;
     int direction = 1;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,8 @@ public class EnemyController : MonoBehaviour
 
         rbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
+
+
     }
 
     private void Update()
@@ -46,6 +49,8 @@ public class EnemyController : MonoBehaviour
         if (Health <= 0)
         {
             Destroy(gameObject);
+
+            
         }
 
 
@@ -86,7 +91,9 @@ public class EnemyController : MonoBehaviour
         if (obj != null && playerObj == null)
         {
             StartCoroutine(DamageEffectSequence(spriteRenderer, Color.red, 0.1f));
-            Health -= 1;
+
+            Health -=1;
+
             obj.Damage(-1);
 
         }
